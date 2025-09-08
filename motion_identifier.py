@@ -1,10 +1,20 @@
- # Motion Type Identifier Template
+# Motion Type Identifier Template
  
 
 # Function 1: Convert velocity to m/s
 
 def convert_velocity(value, unit):
-
+    if unit == "ft/s":
+        v = value * 0.3048
+        return(v)
+    elif unit == "km/s":
+        v = value * 1000
+        return(v)
+    elif unit == "mi/s":
+        v = value * 1609.34
+        return(v)
+    else:
+        return(value)
     """
 
     Convert velocity to meters per second (m/s)
@@ -22,7 +32,17 @@ def convert_velocity(value, unit):
 # Function 2: Convert acceleration to m/s²
 
 def convert_acceleration(value, unit):
-
+    if unit == "ft/s²":
+        a = value * 0.3048
+        return(a)
+    elif unit == "km/s²":
+        a = value * 1000
+        return(a)
+    elif unit == "mi/s²":
+        a = value * 1609.34
+        return(a)
+    else:
+        return(value)
     """
 
     Convert acceleration to meters per second squared (m/s²)
@@ -40,7 +60,15 @@ def convert_acceleration(value, unit):
 # Function 3: Determine motion type
 
 def motion_type(v, a):
-
+    if v>0 and a == 0:
+        return("Uniform Motion")
+    elif v>0 and a>0:
+        return("Accelerated Motion")
+    elif v>0 and a<0:
+        return("Decelerated Motion")
+    elif v == 0:
+        return("At Rest")
+   
     """
 
     Determine the type of motion based on velocity and acceleration
